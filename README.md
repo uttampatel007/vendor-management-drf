@@ -36,7 +36,6 @@ The server will be running at `http://localhost:8000/`.
 
 
 # Test Suite
-## Running Tests
 
 To run the test suite, use the following command:
 
