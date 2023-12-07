@@ -120,3 +120,10 @@ Retrieve performance metrics for a specific vendor by ID.
 
 - **GET /api/vendors/{vendor_id}/performance/**
   - Example: `GET /api/vendors/123/performance/`
+
+### Update Acknowledgment API
+This endpoint will update acknowledgment_date and trigger the recalculation
+of average_response_time.
+
+- **GET /api/purchase_orders/<int:po_id>/acknowledge/**
+  - Example: `GET /api/purchase_orders/123/acknowledge/`
