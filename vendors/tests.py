@@ -72,3 +72,6 @@ class VendorDetailUpdateDeleteAPITests(TestCase):
         # Test GET request for retrieving a single object
         response = response = self.client.get(self.url, pk=self.test_object.pk)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+
+# SIMILARLY WE CAN WRITE TESTS FOR PURCHASE ORDER

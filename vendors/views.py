@@ -64,6 +64,10 @@ class VendorDetail(APIView):
 
 class PurchaseOrderListCreateAPIView(APIView):
     """Purchase Order List & Create APIView"""
+
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request):
         purchase_orders = PurchaseOrder.objects.all()
         serializer = PurchaseOrderSerializer(purchase_orders, many=True)
@@ -79,6 +83,9 @@ class PurchaseOrderListCreateAPIView(APIView):
 
 class PurchaseOrderDetailAPIView(APIView):
     """Purchase Order Detail, Update & Delete APIView"""
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get_object(self, pk):
         try:
             return PurchaseOrder.objects.get(pk=pk)
@@ -106,6 +113,9 @@ class PurchaseOrderDetailAPIView(APIView):
     
 
 class VendorPerformanceAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, vendor_id):
         try:
             vendor = Vendor.objects.get(pk=vendor_id)
@@ -124,6 +134,9 @@ class VendorPerformanceAPIView(APIView):
 
 
 class AcknowledgePurchaseOrderAPIView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
     def post(self, request, po_id):
         try:
             purchase_order = PurchaseOrder.objects.get(pk=po_id)
