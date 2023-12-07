@@ -34,6 +34,17 @@ This is a Vendor Management System developed using Django and Django REST Framew
 
 The server will be running at `http://localhost:8000/`.
 
+
+# Test Suite
+## Running Tests
+
+To run the test suite, use the following command:
+
+```bash
+    python manage.py test
+```
+
+
 # API Endpoints
 
 This document outlines the available endpoints for the Vendor Management System with Performance Metrics.
@@ -125,5 +136,5 @@ Retrieve performance metrics for a specific vendor by ID.
 This endpoint will update acknowledgment_date and trigger the recalculation
 of average_response_time.
 
-- **GET /api/purchase_orders/<int:po_id>/acknowledge/**
+- **GET /api/purchase_orders/{int:po_id}/acknowledge/**
   - Example: `GET /api/purchase_orders/123/acknowledge/`
